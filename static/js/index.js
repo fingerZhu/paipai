@@ -80,6 +80,7 @@ layui.define(["layer","table","upload"], function(exports){
                 },
                 done:function(){
                     $("#kd").val("");
+                    $("#babyList + div").attr("spellcheck",false);//去掉网页的拼写检查
                 }
             })
         }
