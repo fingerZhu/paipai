@@ -1,0 +1,64 @@
+﻿{% extends "common.html" %}
+
+{% block title %}拍拍{% endblock %}
+
+{% block head %}
+	{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+    {{super()}}
+    <div class="bg-head">
+        <div class="head-img"></div>
+    </div>
+    <div class="layui-container">
+        <div class="btn-arr">
+            <div class="div-left">
+                <button class="layui-btn" id="importData" title="只接受json后缀的文件">
+                  <i class="layui-icon">&#xe7a0;</i>上传
+                </button>
+                <button class="layui-btn" id="exportData">
+                  <i class="layui-icon">&#xe64c;</i>下载
+                </button>
+                <button class="layui-btn" id="addBaby">
+                  <i class="layui-icon">&#xe642;</i>添加
+                </button>
+            </div>
+            <div class="div-right">
+                <input type="text" name="kd" id="kd" placeholder="别说话,问我" autocomplete="off" class="layui-input">
+                <button class="layui-btn" id="search">
+                    <i class="layui-icon">&#xe615;</i>查询
+                </button>
+            </div>
+        </div>
+        <table id="babyList"></table>
+    </div>
+
+    <script>
+        //加载js
+        layui.use('index');
+    </script>
+{% endblock %}
+{% block template %}
+    <script type="text/template" id="tpl-addBaby">
+        <div class="layui-form-item">
+            <label class="layui-form-label">宝贝名称</label>
+            <div class="layui-input-block">
+            <input type="text" name="babyName" required  lay-verify="required" placeholder="请输入宝贝名称" autocomplete="off" class="layui-input">
+            </div>
+         </div>
+         <div class="layui-form-item">
+             <label class="layui-form-label">宝贝地址</label>
+             <div class="layui-input-block">
+               <input type="text" name="babyUrl" required  lay-verify="required" placeholder="请输入宝贝地址" autocomplete="off" class="layui-input">
+             </div>
+        </div>
+    </script>
+    <script type="text/template" id="toolBar">
+      <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
+    </script>
+{% endblock %}
+{% block footer %}
+	{{ super() }}
+{% endblock %}

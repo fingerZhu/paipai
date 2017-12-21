@@ -1,0 +1,60 @@
+::-webkit-scrollbar{
+  display:none;
+}
+body{
+    background-color:#fbf9ef;
+}
+.layui-btn+.layui-btn{
+    margin-left:0;
+}
+a:hover{
+    text-decoration: none;
+}
+.layui-form-label{
+    width:90px;
+}
+.layui-layer-content{
+    padding: 20px 20px 0 0;
+}
+.btn-arr{
+    margin-top:10px;
+}
+.layui-btn{
+    line-height:30px;
+}
+.layui-table-header thead th{
+    font-weight:bold;
+}
+#kd{
+    display:inline-block;
+    width:200px;
+    vertical-align:middle;
+    margin-right:5px;
+}
+.div-left,.div-right{
+    display:inline-block;
+}
+.div-left{
+    width:500px;
+}
+.div-right{
+    text-align:right;
+    width:636px;
+}
+.bg-head{
+    height:100px;
+    width:100%;
+    background-color:#013d83;
+}
+.head-img{
+    height:100px;
+    width: 1080px;
+    margin: 0 auto;
+    background-image:url(../pic/banner.jpg);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+.layui-btn-danger{
+    background-color:#009688;
+}
+

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {% block head %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='frame/Layui/css/layui.css') }}">
+        <script src="{{ url_for('static', filename='frame/Jquery/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='frame/Layui/layui.js') }}"></script>
+        <style>
+            .copyright{
+                font-size: 12px;
+                color: #999;
+                margin: 40px auto;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+            }
+        </style>
+        <script>
+            layui.config({
+              //dir: "{{ url_for('static', filename='frame/Layui/layui.js') }}", //layui.js 所在路径（注意，如果是script单独引入layui.js，无需设定该参数。），一般情况下可以无视
+              version: true, //一般用于更新模块缓存，默认不开启。设为true即让浏览器不缓存。也可以设为一个固定的值，如：201610
+              debug: true, //用于开启调试模式，默认false，如果设为true，则JS模块的节点会保留在页面
+              base: "{{ url_for('static',filename='js/') }}" //设定扩展的Layui模块的所在目录，一般用于外部模块扩展
+            });
+        </script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+        <div class="layui-footer copyright">
+                {% block footer %}Copyright © 2013-2017 襄阳淘宝一哥  jianxin.com All Rights Reserved. 备案号：鄂ICP备15012807号-1{% endblock %}
+        </div>
+        {% block template %}{% endblock %}
+    </body>
+</html>
